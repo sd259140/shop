@@ -5,11 +5,24 @@
 <div class="container my-5">
  <div class="row">
   <div class="col-sm-3">
-   Side Bar for Mobile filter
+    <div class="list-group">
+        
+        <a href="{% url 'mobile' %}" class="list-group-item list-group-item-action">mobile</a>
+        <a href="{% url 'mobiledata' 'Redmi' %}" class="list-group-item list-group-item-action">REDMI</a>
+        <a href="{% url 'mobiledata' 'Samsung' %}" class="list-group-item list-group-item-action">SAMSUNG</a>
+        
+      </div>
   </div>
   <div class="col-sm-8 offset-sm-1">
-   Mobile Product List
+    
   </div>
  </div>
+</div>
+<div>
+    {% for p in Mobile %}
+    <a href="{% url 'product-detail' product.id %}" class="list-group-item">
+    <img src="{p.product_img.url}" > 
+</a>
+    {% endfor %}
 </div>
 {% endblock main-content %}
