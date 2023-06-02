@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}reset{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+     <h3>password reset</h3>
+     <form action="" method="post">
+        {% csrf_token %}
+        {% for fm in form %} 
+{{fm.label_tag}} {{fm}}
+        {% endfor %}
+        <input type="submit" value="send">
+     </form>
+
+     </div>
+    </div>
+    {% endblock main-content %}

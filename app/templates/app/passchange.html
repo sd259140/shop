@@ -1,19 +1,20 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% block title %}Login{% endblock title %}
+{% block title %}changepassword{% endblock title %}
 {% block main-content %}
 <div class="container">
  <div class="row my-3">
   <div class="col-sm-6 offset-sm-3">
-   <h3>Login</h3>
+   <h3>welcome</h3>
    <hr>
    <form action="" method="post" novalidate class="shadow p-5">
     {% csrf_token %}
     {% for fm in form %}
-    {{fm.label_tag}} {{fm}}
+    <div>
+    {{fm.label_tag}}{{fm}}
+    </div>
     {% endfor %}
-    <input type="submit" value="login">
-    <a href="{% url 'reset' %}">Forgotpassword</a>
+    <input type="submit" value="save">
    </form>
   </div>
  </div>
